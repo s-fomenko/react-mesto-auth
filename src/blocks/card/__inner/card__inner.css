@@ -1,0 +1,7 @@
+.card__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px;
+  background-color: #fff;
+}

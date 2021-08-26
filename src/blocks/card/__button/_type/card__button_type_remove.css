@@ -1,0 +1,11 @@
+.card__button_type_remove {
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  padding: 0;
+  width: 18px;
+  height: 20px;
+  border: 0;
+  background: transparent url(../../../../images/trash-icon.svg) no-repeat 50% / contain;
+}

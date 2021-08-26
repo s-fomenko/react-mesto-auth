@@ -1,0 +1,16 @@
+.profile__button_type_add {
+  width: 100%;
+  height: 50px;
+  border: 2px solid #fff;
+  background: transparent url(../../../../images/button-add.svg) no-repeat 50% / 16px;
+  box-sizing: border-box;
+}
+
+@media (min-width:768px) {
+
+  .profile__button_type_add {
+    margin-left: auto;
+    width: 150px;
+    background: transparent url(../../../../images/button-add.svg) no-repeat 50% / 22px;
+  }
+}

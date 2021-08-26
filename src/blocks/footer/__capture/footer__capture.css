@@ -1,0 +1,13 @@
+.footer__capture {
+  margin: 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media (min-width:1024px) {
+
+  .footer__capture {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

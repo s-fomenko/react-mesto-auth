@@ -1,0 +1,7 @@
+.image__item {
+  display: block;
+  max-width: 75vw;
+  width: 100%;
+  max-height: 75vh;
+  object-fit: cover;
+}

@@ -1,0 +1,9 @@
+.image__description {
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+}

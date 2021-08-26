@@ -1,0 +1,13 @@
+.profile__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+@media (min-width:768px) {
+
+  .profile__wrapper {
+    align-items: baseline;
+  }
+}

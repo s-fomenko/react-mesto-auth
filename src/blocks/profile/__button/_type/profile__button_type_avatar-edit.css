@@ -1,0 +1,15 @@
+.profile__button_type_avatar-edit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  border: 0;
+  border-radius: 50%;
+  background: #000 url(../../../../images/button-avatar.svg) no-repeat 50% / 26px;
+  opacity: 0;
+}
+
+.profile__button_type_avatar-edit:hover {
+  opacity: 80%;
+}

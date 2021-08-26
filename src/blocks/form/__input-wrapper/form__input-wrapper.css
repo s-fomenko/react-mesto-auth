@@ -1,0 +1,7 @@
+.form__input-wrapper {
+  width: 100%;
+}
+
+.form__input-wrapper:not(:last-of-type) {
+  margin-bottom: 30px;
+}

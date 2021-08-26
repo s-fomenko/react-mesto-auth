@@ -1,0 +1,10 @@
+.content {
+  padding: 0 19px;
+}
+
+@media (min-width:1024px) {
+
+  .content {
+    padding: 0;
+  }
+}
