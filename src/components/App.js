@@ -10,6 +10,7 @@ import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import {Route, Switch} from 'react-router-dom';
+import AuthForm from './AuthForm';
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false)
@@ -96,7 +97,7 @@ function App() {
           <Header/>
           <Switch>
             <Route path="/sign-up">
-              <div>sign-up</div>
+              <AuthForm name="sign-up" title="Регистрация" buttonText="Зарегистрироваться" onSubmit={() => console.log('Success')} />
             </Route>
             <Route path="/sign-in">
               <div>sign-in</div>

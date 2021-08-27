@@ -60,3 +60,6 @@
 
 @import url(./blocks/image/__item/image__item.css);
 @import url(./blocks/image/__description/image__description.css);
+
+@import url(./blocks/auth-form/auth-form.css);
+@import url(./blocks/auth-form/__title/auth-form__title.css);
