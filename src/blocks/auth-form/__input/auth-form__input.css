@@ -1,0 +1,22 @@
+.auth-form__input {
+  padding: 0 0 14px;
+  width: 100%;
+  color: #fff;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  background-color: #000;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+}
+
+.auth-form__input::placeholder {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #ccc;
+}
+
+.auth-form__input:not(:last-of-type) {
+  margin-bottom: 30px;
+}
