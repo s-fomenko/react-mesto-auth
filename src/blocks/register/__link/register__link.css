@@ -1,0 +1,11 @@
+.register__link {
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity .4s ease;
+}
+
+.register__link:hover {
+  opacity: 0.6;
+}
