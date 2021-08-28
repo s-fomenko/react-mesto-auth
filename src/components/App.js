@@ -23,7 +23,8 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
-  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [email, setEmail] = React.useState('');
 
   React.useEffect(() => {
     api.getInitialData()
@@ -100,7 +101,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <div className="container">
-          <Header/>
+          <Header email={email} onSignOut={() => {}} />
           <Switch>
             <Route path="/sign-up">
               <Register name="register" title="Регистрация" buttonText="Зарегистрироваться" onSubmit={() => {}} />
