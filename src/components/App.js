@@ -12,6 +12,7 @@ import AddPlacePopup from './AddPlacePopup';
 import {Route, Switch} from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false)
@@ -20,6 +21,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   React.useEffect(() => {
     api.getInitialData()
@@ -103,7 +105,7 @@ function App() {
             <Route path="/sign-in">
               <Login name="login" title="Вход" buttonText="Войти" onSubmit={() => {}} />
             </Route>
-            <Route exact path="/">
+            <ProtectedRoute isLoggedIn={isLoggedIn} exact path="/">
               <Main
                 onEditProfile={handleEditProfileClick}
                 onAddPlace={handleAddPlaceClick}
@@ -114,7 +116,7 @@ function App() {
                 onCardDelete={handleCardDelete}
               />
               <Footer/>
-            </Route>
+            </ProtectedRoute>
           </Switch>
         </div>
 
