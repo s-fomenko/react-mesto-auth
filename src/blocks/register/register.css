@@ -1,0 +1,9 @@
+.register {
+  width: 100%;
+  max-width: 358px;
+  margin: 15px auto 0;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  text-align: center;
+}

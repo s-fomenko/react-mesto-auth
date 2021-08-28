@@ -66,3 +66,6 @@
 @import url(./blocks/auth-form/__wrapper/auth-form__wrapper.css);
 @import url(./blocks/auth-form/__input/auth-form__input.css);
 @import url(./blocks/auth-form/__button/auth-form__button.css);
+
+@import url(./blocks/register/register.css);
+@import url(./blocks/register/__link/register__link.css);

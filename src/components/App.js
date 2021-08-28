@@ -1,6 +1,6 @@
 import React from 'react';
 import api from '../utils/api';
-import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import {CurrentUserContext} from '../contexts/CurrentUserContext';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -10,7 +10,8 @@ import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import {Route, Switch} from 'react-router-dom';
-import AuthForm from './AuthForm';
+import Login from './Login';
+import Register from './Register';
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false)
@@ -97,10 +98,10 @@ function App() {
           <Header/>
           <Switch>
             <Route path="/sign-up">
-              <AuthForm name="sign-up" title="Регистрация" buttonText="Зарегистрироваться" onSubmit={() => console.log('Success')} />
+              <Register name="register" title="Регистрация" buttonText="Зарегистрироваться" onSubmit={() => {}} />
             </Route>
             <Route path="/sign-in">
-              <div>sign-in</div>
+              <Login name="login" title="Вход" buttonText="Войти" onSubmit={() => {}} />
             </Route>
             <Route exact path="/">
               <Main
