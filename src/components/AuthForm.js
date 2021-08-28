@@ -6,9 +6,13 @@ function AuthForm({ name, title, buttonText, onSubmit }) {
 
   const handleChangeEmail = e => setEmail(e.target.value);
   const handleChangePassword = e => setPassword(e.target.value);
+  const handleSubmit = e => {
+    e.preventDefault();
+    onSubmit(email, password);
+  }
 
   return (
-    <form className="auth-form" action="#" name={name} onSubmit={onSubmit}>
+    <form className="auth-form" action="#" name={name} onSubmit={handleSubmit}>
       <div className="auth-form__wrapper">
         <h2 className="auth-form__title">{title}</h2>
         <input className="auth-form__input" id="email" type="email" name="email" placeholder="Email" required value={email || ''} onChange={handleChangeEmail} />
