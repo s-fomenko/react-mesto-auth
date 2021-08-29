@@ -27,6 +27,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [isSuccess, setIsSuccess] = React.useState(false);
+  const [infoTooltipMessage, setInfoTooltipMessage] = React.useState('');
   const history = useHistory();
 
   React.useEffect(() => {
@@ -37,7 +38,7 @@ function App() {
       })
       .catch(err => console.log(err));
 
-    isAuthorized();
+    checkToken();
   }, []);
 
   const handleCardLike = card => {
@@ -51,7 +52,9 @@ function App() {
   }
 
   const handleCardDelete = card => {
-    api.deleteCard(card._id).then(() => setCards(state => state.filter(c => c._id !== card._id)))
+    api.deleteCard(card._id)
+      .then(() => setCards(state => state.filter(c => c._id !== card._id)))
+      .catch(err => console.log(err))
   }
 
 
@@ -97,8 +100,10 @@ function App() {
 
   const handleAddPlace = ({name, link}) => {
     api.setNewCard(name, link)
-      .then(newCard => setCards([newCard, ...cards]))
-      .then(closeAllPopups)
+      .then(newCard => {
+        setCards([newCard, ...cards]);
+        closeAllPopups();
+      })
       .catch(err => console.log(err))
   }
 
@@ -108,14 +113,15 @@ function App() {
         if (data) {
           history.push('/sign-in');
           setIsSuccess(true);
-          setIsInfoTooltipOpen(true);
+          setInfoTooltipMessage('Вы успешно зарегистрировались!');
         }
       })
       .catch(err => {
         console.log(err);
         setIsSuccess(false);
-        setIsInfoTooltipOpen(true);
+        setInfoTooltipMessage('Что-то пошло не так! Попробуйте ещё раз.');
       })
+      .finally(() => setIsInfoTooltipOpen(true))
   }
 
   const handleAuthorization = (email, password) => {
@@ -131,6 +137,7 @@ function App() {
       .catch(err => {
         console.log(err);
         setIsSuccess(false);
+        setInfoTooltipMessage('Что-то пошло не так! Попробуйте ещё раз.');
         setIsInfoTooltipOpen(true);
       })
   }
@@ -142,7 +149,7 @@ function App() {
     history.push('/sign-in');
   }
 
-  const isAuthorized = () => {
+  const checkToken = () => {
     const token = localStorage.getItem('token');
     if (token) {
       auth.checkToken(token)
@@ -192,7 +199,7 @@ function App() {
 
         <PopupWithForm name="delete" title="Вы уверены?" buttonText="Да"/>
 
-        <InfoTooltip isOpen={isInfoTooltipOpen} onClose={closeAllPopups} isSuccess={isSuccess} />
+        <InfoTooltip isOpen={isInfoTooltipOpen} onClose={closeAllPopups} isSuccess={isSuccess} message={infoTooltipMessage} />
 
         {selectedCard && <ImagePopup
           card={selectedCard}
